@@ -78,10 +78,10 @@ const CalorieCalculator = () => {
                 {
                   [
                     "Sedentary",
-                    "Lightly active",
-                    "Moderately active",
-                    "Very active",
-                    "Super active",
+                    " Lightly active (light exercise 1-3 days/week)",
+                    "Moderately active (moderate exercise 3-5 days/week)",
+                    "Very active (hard exercise 6-7 days/week)",
+                    "Super active (very hard exercise or physical job)",
                   ][idx]
                 }
               </option>
