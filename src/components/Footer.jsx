@@ -14,7 +14,7 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="bg-emerald-900 text-white py-6 border-t border-gray-700 w-full  mt-5">
+    <footer className="bg-emerald-500 dark:bg-gray-900 text-white transition-all py-4 px-3 shadow-xl">
       <div className="container mx-auto text-center text-sm md:text-base">
         <p>
           &copy; {new Date().getFullYear()} Calorie Tracking App. All rights

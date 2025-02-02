@@ -1,41 +1,44 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import DietTemplate from "../../components/DietTemplate";
 
 const KetoDiet = () => {
+  const { t } = useTranslation();
+
   return (
     <DietTemplate
-      title="Keto Diet"
-      description="The Keto diet is a low-carbohydrate, high-fat eating plan designed to induce a metabolic state called ketosis, where the body burns fat as its primary source of energy instead of carbohydrates."
+      title={t("keto_diet.title")}
+      description={t("keto_diet.description")}
       sections={[
         {
-          title: "How to Follow:",
+          title: t("keto_diet.how_to_follow"),
           items: [
-            "Reduce carbohydrate intake to below 50 grams per day.",
-            "Increase consumption of healthy fats such as avocado, olive oil, and nuts.",
-            "Consume moderate amounts of protein to maintain muscle mass.",
+            t("keto_diet.steps.reduce_carbs"),
+            t("keto_diet.steps.increase_fats"),
+            t("keto_diet.steps.moderate_protein"),
           ],
         },
         {
-          title: "Benefits:",
+          title: t("keto_diet.benefits"),
           items: [
-            "May support weight loss by promoting fat burning.",
-            "Could help stabilize blood sugar levels and improve insulin sensitivity.",
-            "Might enhance mental clarity and energy levels.",
+            t("keto_diet.benefits_list.weight_loss"),
+            t("keto_diet.benefits_list.stabilize_sugar"),
+            t("keto_diet.benefits_list.mental_clarity"),
           ],
         },
         {
-          title: "Challenges:",
+          title: t("keto_diet.challenges"),
           items: [
-            "Initial adaptation phase may cause 'Keto Flu' symptoms such as fatigue and headaches.",
-            "Requires strict adherence and careful meal planning to sustain.",
+            t("keto_diet.challenges_list.keto_flu"),
+            t("keto_diet.challenges_list.strict_planning"),
           ],
         },
         {
-          title: "Additional Tips:",
+          title: t("keto_diet.additional_tips"),
           items: [
-            "Consult a nutritionist before starting to ensure it aligns with your health needs.",
-            "Monitor electrolyte levels and stay hydrated to prevent imbalances.",
-            "Incorporate nutrient-dense, whole foods to maximize health benefits.",
+            t("keto_diet.tips_list.consult_nutritionist"),
+            t("keto_diet.tips_list.monitor_electrolytes"),
+            t("keto_diet.tips_list.whole_foods"),
           ],
         },
       ]}

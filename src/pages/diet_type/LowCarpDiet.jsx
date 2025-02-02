@@ -1,44 +1,47 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import DietTemplate from "../../components/DietTemplate";
 
-const LowCarpDiet = () => {
+const LowCarbDiet = () => {
+  const { t } = useTranslation();
+
   return (
     <DietTemplate
-      title="Low-Carp Diet"
-      description="The Low-Carp Diet focuses on reducing carbohydrate intake while increasing the consumption of proteins and healthy fats to promote weight loss and overall health improvement."
+      title={t("low_carb_diet.title")}
+      description={t("low_carb_diet.description")}
       sections={[
         {
-          title: "How to Follow:",
+          title: t("low_carb_diet.how_to_follow"),
           items: [
-            "Avoid or limit high-carp foods such as bread, pasta, and rice.",
-            "Increase consumption of non-starchy vegetables, proteins, and healthy fats.",
-            "Choose protein sources like meat, fish, eggs, and nuts.",
-            "Use healthy oils such as olive oil and coconut oil for cooking.",
+            t("low_carb_diet.steps.avoid_high_carb"),
+            t("low_carb_diet.steps.increase_vegetables"),
+            t("low_carb_diet.steps.choose_protein"),
+            t("low_carb_diet.steps.use_healthy_oils"),
           ],
         },
         {
-          title: "Benefits:",
+          title: t("low_carb_diet.benefits"),
           items: [
-            "May support weight loss and improve blood sugar levels.",
-            "Could help enhance cholesterol and triglyceride levels.",
-            "Might reduce appetite and promote a sense of fullness.",
+            t("low_carb_diet.benefits_list.weight_loss"),
+            t("low_carb_diet.benefits_list.cholesterol"),
+            t("low_carb_diet.benefits_list.reduce_appetite"),
           ],
         },
         {
-          title: "Challenges:",
+          title: t("low_carb_diet.challenges"),
           items: [
-            "May cause fatigue or dizziness initially due to carbohydrate reduction.",
-            "Could lead to nutrient deficiencies if meal planning is not well balanced.",
-            "Might be difficult to sustain long-term due to food restrictions.",
+            t("low_carb_diet.challenges_list.fatigue"),
+            t("low_carb_diet.challenges_list.deficiencies"),
+            t("low_carb_diet.challenges_list.sustainability"),
           ],
         },
         {
-          title: "Additional Tips:",
+          title: t("low_carb_diet.additional_tips"),
           items: [
-            "Consult a nutritionist before starting to ensure nutritional needs are met.",
-            "Drink plenty of water to stay hydrated.",
-            "Monitor how your body responds and adjust the diet as needed.",
-            "Choose fiber-rich carbohydrate sources like leafy vegetables.",
+            t("low_carb_diet.tips_list.consult_nutritionist"),
+            t("low_carb_diet.tips_list.stay_hydrated"),
+            t("low_carb_diet.tips_list.monitor_body"),
+            t("low_carb_diet.tips_list.fiber_rich"),
           ],
         },
       ]}
@@ -46,4 +49,4 @@ const LowCarpDiet = () => {
   );
 };
 
-export default LowCarpDiet;
+export default LowCarbDiet;

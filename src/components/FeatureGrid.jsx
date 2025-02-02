@@ -1,30 +1,31 @@
 import React from "react";
 import { FaAppleAlt, FaCalculator, FaInfoCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next"; // استيراد الترجمة
 
 const FeatureGrid = () => {
+  const { t } = useTranslation(); // استخدام الترجمة
+
   const features = [
     {
       id: 1,
       icon: <FaAppleAlt className="w-12 h-12 text-green-500" />,
-      title: "Diet Types",
-      description: "A brief overview of the different types of diets.",
+      title: t("features.diet_types.title"),
+      description: t("features.diet_types.description"),
       link: "/diet-types",
     },
     {
       id: 2,
       icon: <FaCalculator className="w-12 h-12 text-yellow-500" />,
-      title: "Calories Calculator",
-      description:
-        "Calculate your daily caloric needs and macronutrient distribution.",
+      title: t("features.calories_calculator.title"),
+      description: t("features.calories_calculator.description"),
       link: "/calorie-calculator",
     },
     {
       id: 3,
       icon: <FaInfoCircle className="w-12 h-12 text-blue-500" />,
-      title: "InBody Info",
-      description:
-        "Analyze your body composition measurements for better insights.",
+      title: t("features.inbody_info.title"),
+      description: t("features.inbody_info.description"),
       link: "/body-info",
     },
   ];
@@ -34,10 +35,10 @@ const FeatureGrid = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-green-500 dark:text-green-400 text-xl font-semibold tracking-wide uppercase">
-            Our Features
+            {t("features.section_title")}
           </h2>
           <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
-            What We Offer
+            {t("features.section_subtitle")}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">

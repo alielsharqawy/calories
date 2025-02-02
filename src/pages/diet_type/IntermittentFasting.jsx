@@ -1,38 +1,41 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import DietTemplate from "../../components/DietTemplate";
 
 const IntermittentFasting = () => {
+  const { t } = useTranslation();
+
   return (
     <DietTemplate
-      title="Intermittent Fasting"
-      description="Intermittent fasting is an eating pattern that cycles between periods of fasting and eating. It does not specify which foods to eat, but rather when to eat them."
+      title={t("intermittent_fasting.title")}
+      description={t("intermittent_fasting.description")}
       sections={[
         {
-          title: "How to Follow:",
+          title: t("intermittent_fasting.how_to_follow"),
           items: [
-            "16/8 Method: Fast for 16 hours and eat within an 8-hour window.",
-            "5:2 Method: Eat normally for 5 days a week and reduce calorie intake to 500-600 for 2 days.",
+            t("intermittent_fasting.steps.method_16_8"),
+            t("intermittent_fasting.steps.method_5_2"),
           ],
         },
         {
-          title: "Benefits:",
+          title: t("intermittent_fasting.benefits"),
           items: [
-            "May aid in weight loss and improve metabolism.",
-            "Could help in improving heart health and reducing chronic disease risks.",
+            t("intermittent_fasting.benefits_list.weight_loss"),
+            t("intermittent_fasting.benefits_list.heart_health"),
           ],
         },
         {
-          title: "Challenges:",
+          title: t("intermittent_fasting.challenges"),
           items: [
-            "May cause hunger and weakness initially.",
-            "Not suitable for everyone, especially those with certain medical conditions.",
+            t("intermittent_fasting.challenges_list.hunger"),
+            t("intermittent_fasting.challenges_list.not_suitable"),
           ],
         },
         {
-          title: "Additional Tips:",
+          title: t("intermittent_fasting.additional_tips"),
           items: [
-            "Consult a nutritionist before starting this regimen.",
-            "Stay hydrated by drinking enough water during fasting periods.",
+            t("intermittent_fasting.tips_list.consult_nutritionist"),
+            t("intermittent_fasting.tips_list.stay_hydrated"),
           ],
         },
       ]}

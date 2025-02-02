@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Pie, Bar } from "react-chartjs-2";
+import { useTranslation } from "react-i18next";
 import {
   Chart as ChartJS,
   ArcElement,
@@ -22,6 +23,7 @@ ChartJS.register(
 );
 
 const CalorieCalculator = () => {
+  const { t } = useTranslation();
   const [age, setAge] = useState("");
   const [gender, setGender] = useState("male");
   const [weight, setWeight] = useState("");
@@ -34,7 +36,7 @@ const CalorieCalculator = () => {
 
   const calculateBMR = () => {
     if (!age || !weight || !height) {
-      alert("Please fill in all fields.");
+      alert(t("calorie_calculator.alert_fill_fields"));
       return;
     }
 
@@ -61,156 +63,154 @@ const CalorieCalculator = () => {
   const determineDietPlan = (dailyCalories, bmi) => {
     let plan;
     if (bmi < 18.5) {
-      plan =
-        "Weight Gain Diet: Increase your calorie intake by 300-500 kcal per day.";
+      plan = t("calorie_calculator.diet_plans.gain");
     } else if (bmi >= 18.5 && bmi <= 24.9) {
-      plan =
-        "Maintenance Diet: Maintain your current calorie intake for a balanced lifestyle.";
+      plan = t("calorie_calculator.diet_plans.maintain");
     } else if (bmi >= 25) {
-      plan =
-        "Weight Loss Diet: Reduce your calorie intake by 300-500 kcal per day.";
+      plan = t("calorie_calculator.diet_plans.loss");
     }
     setDietPlan(plan);
   };
 
   return (
-    <div className="flex flex-col lg:flex-row lg:space-x-6 p-6 w-full mx-auto dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
-      <div className="w-full lg:w-1/2 p-6 dark:bg-gray-800 rounded-lg shadow-md">
-        <h2 className="text-3xl font-bold mb-6 text-center text-emerald-700 dark:text-emerald-400">
-          Calorie Calculator
-        </h2>
-        {[
-          { label: "Age (years)", value: age, setter: setAge },
-          { label: "Weight (kg)", value: weight, setter: setWeight },
-          { label: "Height (cm)", value: height, setter: setHeight },
-        ].map(({ label, value, setter }) => (
-          <div key={label} className="mb-5">
+    <div className="p-6 w-full mx-auto dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
+      <h2 className="text-3xl font-bold mb-6 text-center text-emerald-700 dark:text-emerald-400">
+        {t("calorie_calculator.title")}
+      </h2>
+
+      <div className="flex flex-col lg:flex-row gap-6">
+        {/* إدخال البيانات */}
+        <div className="w-full lg:w-1/2 p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+          {[
+            { label: t("calorie_calculator.age"), value: age, setter: setAge },
+            {
+              label: t("calorie_calculator.weight"),
+              value: weight,
+              setter: setWeight,
+            },
+            {
+              label: t("calorie_calculator.height"),
+              value: height,
+              setter: setHeight,
+            },
+          ].map(({ label, value, setter }) => (
+            <div key={label} className="mb-5">
+              <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
+                {label}:
+              </label>
+              <input
+                type="number"
+                value={value}
+                onChange={(e) => setter(e.target.value)}
+                className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-emerald-500 dark:bg-gray-700 dark:text-white"
+              />
+            </div>
+          ))}
+
+          <div className="mb-5">
             <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-              {label}:
+              {t("calorie_calculator.gender")}
             </label>
-            <input
-              type="number"
-              value={value}
-              onChange={(e) => setter(e.target.value)}
+            <select
+              value={gender}
+              onChange={(e) => setGender(e.target.value)}
               className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-emerald-500 dark:bg-gray-700 dark:text-white"
-            />
+            >
+              <option value="male">{t("calorie_calculator.male")}</option>
+              <option value="female">{t("calorie_calculator.female")}</option>
+            </select>
           </div>
-        ))}
-        <div className="mb-5">
-          <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-            Gender:
-          </label>
-          <select
-            value={gender}
-            onChange={(e) => setGender(e.target.value)}
-            className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-emerald-500 dark:bg-gray-700 dark:text-white"
+
+          <div className="mb-5">
+            <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
+              {t("calorie_calculator.activity_level")}
+            </label>
+            <select
+              value={activityLevel}
+              onChange={(e) => setActivityLevel(e.target.value)}
+              className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-emerald-500 dark:bg-gray-700 dark:text-white"
+            >
+              {t("calorie_calculator.activity_levels", {
+                returnObjects: true,
+              }).map((level, idx) => (
+                <option key={idx} value={(idx + 1) * 0.2 + 1}>
+                  {level}
+                </option>
+              ))}
+            </select>
+          </div>
+
+          <button
+            onClick={calculateBMR}
+            className="w-full bg-emerald-600 text-white py-3 rounded-lg hover:bg-emerald-700 transition duration-200"
           >
-            <option value="male">Male</option>
-            <option value="female">Female</option>
-          </select>
+            {t("calorie_calculator.calculate")}
+          </button>
+
+          {calories && (
+            <div className="mt-6 p-4 bg-emerald-100 dark:bg-emerald-800 text-emerald-800 dark:text-emerald-200 rounded-lg text-center">
+              {t("calorie_calculator.daily_needs", { calories })}
+            </div>
+          )}
         </div>
-        <div className="mb-5">
-          <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
-            Activity Level:
-          </label>
-          <select
-            value={activityLevel}
-            onChange={(e) => setActivityLevel(e.target.value)}
-            className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-emerald-500 dark:bg-gray-700 dark:text-white"
-          >
-            {["1.2", "1.375", "1.55", "1.725", "1.9"].map((level, idx) => (
-              <option key={idx} value={level}>
-                {
-                  [
-                    "Sedentary (little or no exercise)",
-                    "Lightly active (light exercise 1-3 days/week)",
-                    "Moderately active (moderate exercise 3-5 days/week)",
-                    "Very active (hard exercise 6-7 days/week)",
-                    "Super active (very hard exercise or physical job)",
-                  ][idx]
-                }
-              </option>
-            ))}
-          </select>
+
+        <div className="w-full lg:w-1/2 flex flex-col gap-6">
+          {macros && (
+            <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+              <h3 className="text-2xl font-bold mb-4 text-center text-emerald-700 dark:text-emerald-400">
+                {t("calorie_calculator.macronutrient_distribution")}
+              </h3>
+              <Pie
+                data={{
+                  labels: [
+                    `${t("calorie_calculator.protein")}: ${macros.protein}g`,
+                    `${t("calorie_calculator.carbohydrates")}: ${
+                      macros.carbs
+                    }g`,
+                    `${t("calorie_calculator.fats")}: ${macros.fats}g`,
+                  ],
+                  datasets: [
+                    {
+                      data: [macros.protein, macros.carbs, macros.fats],
+                      backgroundColor: ["#118B50", "#5DB996", "#E3F0AF"],
+                    },
+                  ],
+                }}
+              />
+            </div>
+          )}
+
+          {bmi && (
+            <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+              <h3 className="text-2xl font-bold mb-4 text-center text-emerald-700 dark:text-emerald-400">
+                {t("calorie_calculator.bmi_indicator")}
+              </h3>
+              <Bar
+                data={{
+                  labels: ["Underweight", "Normal", "Overweight", "Obese"],
+                  datasets: [
+                    {
+                      label: "BMI Value",
+                      data: [
+                        bmi < 18.5 ? bmi : null,
+                        bmi >= 18.5 && bmi <= 24.9 ? bmi : null,
+                        bmi >= 25 && bmi <= 29.9 ? bmi : null,
+                        bmi >= 30 ? bmi : null,
+                      ],
+                      backgroundColor: [
+                        "#97BE5A",
+                        "#00FF00",
+                        "#FFA500",
+                        "#FF0000",
+                      ],
+                    },
+                  ],
+                }}
+              />
+              <p className="text-center mt-4">{dietPlan}</p>
+            </div>
+          )}
         </div>
-        <button
-          onClick={calculateBMR}
-          className="w-full bg-emerald-600 text-white py-3 rounded-lg hover:bg-emerald-700 transition duration-200"
-        >
-          Calculate
-        </button>
-        {calories && (
-          <div className="mt-6 p-4 bg-emerald-100 dark:bg-emerald-800 text-emerald-800 dark:text-emerald-200 rounded-lg text-center">
-            Your daily caloric needs: <strong>{calories}</strong> kcal.
-          </div>
-        )}
-      </div>
-      <div className="w-full lg:w-1/2 flex flex-col space-y-6">
-        {macros && (
-          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-            <h3 className="text-2xl font-bold mb-6 text-center text-emerald-700 dark:text-emerald-400">
-              Macronutrient Distribution
-            </h3>
-            <Pie
-              data={{
-                labels: [
-                  `Protein: ${macros.protein}g`,
-                  `Carbohydrates: ${macros.carbs}g`,
-                  `Fats: ${macros.fats}g`,
-                ],
-                datasets: [
-                  {
-                    data: [macros.protein, macros.carbs, macros.fats],
-                    backgroundColor: ["#118B50", "#5DB996", "#E3F0AF"],
-                  },
-                ],
-              }}
-              options={{
-                responsive: true,
-                plugins: {
-                  legend: { position: "top" },
-                  title: { display: true, text: "Macronutrient Distribution" },
-                },
-              }}
-            />
-          </div>
-        )}
-        {bmi && (
-          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-            <h3 className="text-2xl font-bold mb-6 text-center text-emerald-700 dark:text-emerald-400">
-              BMI Indicator
-            </h3>
-            <Bar
-              data={{
-                labels: ["Underweight", "Normal", "Overweight", "Obese"],
-                datasets: [
-                  {
-                    label: "BMI Value",
-                    data: [
-                      bmi < 18.5 ? bmi : null,
-                      bmi >= 18.5 && bmi <= 24.9 ? bmi : null,
-                      bmi >= 25 && bmi <= 29.9 ? bmi : null,
-                      bmi >= 30 ? bmi : null,
-                    ],
-                    backgroundColor: [
-                      bmi < 18.5 ? "#97BE5A" : "#E0E0E0",
-                      bmi >= 18.5 && bmi <= 24.9 ? "#00FF00" : "#E0E0E0",
-                      bmi >= 25 && bmi <= 29.9 ? "#FFA500" : "#E0E0E0",
-                      bmi >= 30 ? "#FF0000" : "#E0E0E0",
-                    ],
-                  },
-                ],
-              }}
-              options={{
-                responsive: true,
-                plugins: {
-                  legend: { display: false },
-                  title: { display: true, text: `Your BMI: ${bmi}` },
-                },
-              }}
-            />
-          </div>
-        )}
       </div>
     </div>
   );

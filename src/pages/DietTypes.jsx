@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useTranslation } from "react-i18next";
 import KetoDiet from "./diet_type/KetoDiet";
 import JuiceDiet from "./diet_type/JuiceDiet";
 import IntermittentFasting from "./diet_type/IntermittentFasting";
@@ -6,6 +7,7 @@ import LowCarpDiet from "./diet_type/LowCarpDiet";
 import WeightGainDiet from "./diet_type/WeightGainDiet";
 
 const DietTypes = () => {
+  const { t } = useTranslation();
   const [openSection, setOpenSection] = useState(null);
 
   const toggleSection = (section) => {
@@ -15,19 +17,27 @@ const DietTypes = () => {
   return (
     <div className="w-full min-h-screen px-4 sm:px-6 lg:px-20 py-5 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
       <h1 className="text-3xl font-bold text-center text-emerald-700 dark:text-emerald-400 mb-8">
-        Explore Different Diet Types
+        {t("diet_types.title")}
       </h1>
       <div className="space-y-6">
         {[
-          { id: 1, title: "Keto Diet", component: <KetoDiet /> },
-          { id: 2, title: "Juice Diet", component: <JuiceDiet /> },
+          { id: 1, title: t("diet_types.keto"), component: <KetoDiet /> },
+          { id: 2, title: t("diet_types.juice"), component: <JuiceDiet /> },
           {
             id: 3,
-            title: "Intermittent Fasting",
+            title: t("diet_types.intermittent"),
             component: <IntermittentFasting />,
           },
-          { id: 4, title: "Low Carb Diet", component: <LowCarpDiet /> },
-          { id: 5, title: "Weight Gain Diet", component: <WeightGainDiet /> },
+          {
+            id: 4,
+            title: t("diet_types.low_carp"),
+            component: <LowCarpDiet />,
+          },
+          {
+            id: 5,
+            title: t("diet_types.weight_gain"),
+            component: <WeightGainDiet />,
+          },
         ].map(({ id, title, component }) => (
           <div
             key={id}

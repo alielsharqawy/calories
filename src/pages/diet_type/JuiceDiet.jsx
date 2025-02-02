@@ -1,43 +1,46 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import DietTemplate from "../../components/DietTemplate";
 
 const JuiceDiet = () => {
+  const { t } = useTranslation();
+
   return (
     <DietTemplate
-      title="Juice Diet"
-      description="The Juice Diet is a short-term dietary regimen that involves consuming only fresh fruit and vegetable juices for a specific period to detoxify the body and promote weight loss."
+      title={t("juice_diet.title")}
+      description={t("juice_diet.description")}
       sections={[
         {
-          title: "How to Follow:",
+          title: t("juice_diet.how_to_follow"),
           items: [
-            "Choose a variety of fresh fruits and vegetables.",
-            "Use a juicer or blender to extract the juice.",
-            "Replace solid meals with juices for a duration of 3 to 7 days.",
+            t("juice_diet.steps.choose_fresh"),
+            t("juice_diet.steps.use_juicer"),
+            t("juice_diet.steps.replace_meals"),
           ],
         },
         {
-          title: "Benefits:",
+          title: t("juice_diet.benefits"),
           items: [
-            "Provides a high intake of vitamins and minerals.",
-            "May promote short-term weight loss.",
-            "Supports body detoxification and digestion.",
+            t("juice_diet.benefits_list.high_vitamins"),
+            t("juice_diet.benefits_list.weight_loss"),
+            t("juice_diet.benefits_list.detox_support"),
           ],
         },
         {
-          title: "Challenges:",
+          title: t("juice_diet.challenges"),
           items: [
-            "Low in protein and fiber, which may lead to hunger and muscle loss.",
-            "Not sustainable as a long-term dietary solution.",
-            "Possible rapid weight regain after returning to a regular diet.",
+            t("juice_diet.challenges_list.low_protein"),
+            t("juice_diet.challenges_list.not_sustainable"),
+            t("juice_diet.challenges_list.weight_regain"),
           ],
         },
         {
-          title: "Additional Tips:",
+          title: t("juice_diet.additional_tips"),
           items: [
-            "Consult a nutritionist before starting to ensure it's suitable for your health.",
-            "Drink plenty of water to stay hydrated.",
-            "Avoid adding sugar to juices to maintain their natural health benefits.",
-            "Monitor how your body responds and discontinue if adverse effects occur.",
+            t("juice_diet.tips_list.consult_nutritionist"),
+            t("juice_diet.tips_list.stay_hydrated"),
+            t("juice_diet.tips_list.avoid_sugar"),
+            t("juice_diet.tips_list.monitor_response"),
           ],
         },
       ]}

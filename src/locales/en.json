@@ -1,0 +1,218 @@
+{
+  "navbar": {
+    "home": "Home",
+    "diets": "Diets Types",
+    "calories_calculator": "Calories Calculator",
+    "body_info": "InBody Info",
+    "keto_diet": "Keto Diet",
+    "juice_diet": "Juice Diet",
+    "intermittent_fasting": "Intermittent Fasting Diet",
+    "low_carp_diet": "Low Carp Diet",
+    "weight_gain_diet": "Weight Gain Diet",
+    "brand_name": "HealthTec"
+  },
+  "home": {
+    "title": "Discover the Best Diet Plans",
+    "subtitle": "To Achieve Your Health Goals",
+    "description": "Welcome to our website! We offer comprehensive information on various diet plans to help you achieve your health objectives. Start your journey today and find the diet that's right for you.",
+    "get_started": "Get Started Today"
+  },
+  "features": {
+    "section_title": "Our Features",
+    "section_subtitle": "What We Offer",
+    "diet_types": {
+      "title": "Diet Types",
+      "description": "A brief overview of the different types of diets."
+    },
+    "calories_calculator": {
+      "title": "Calories Calculator",
+      "description": "Calculate your daily caloric needs and macronutrient distribution."
+    },
+    "inbody_info": {
+      "title": "InBody Info",
+      "description": "Analyze your body composition measurements for better insights."
+    }
+  },
+  "calorie_calculator": {
+    "title": "Calorie Calculator",
+    "age": "Age (years)",
+    "weight": "Weight (kg)",
+    "height": "Height (cm)",
+    "gender": "Gender",
+    "male": "Male",
+    "female": "Female",
+    "activity_level": "Activity Level",
+    "activity_levels": [
+      "Sedentary (little or no exercise)",
+      "Lightly active (light exercise 1-3 days/week)",
+      "Moderately active (moderate exercise 3-5 days/week)",
+      "Very active (hard exercise 6-7 days/week)",
+      "Super active (very hard exercise or physical job)"
+    ],
+    "calculate": "Calculate",
+    "daily_needs": "Your daily caloric needs: {{calories}} kcal.",
+    "macronutrient_distribution": "Macronutrient Distribution",
+    "bmi_indicator": "BMI Indicator",
+    "diet_plans": {
+      "gain": "Weight Gain Diet: Increase your calorie intake by 300-500 kcal per day.",
+      "maintain": "Maintenance Diet: Maintain your current calorie intake for a balanced lifestyle.",
+      "loss": "Weight Loss Diet: Reduce your calorie intake by 300-500 kcal per day."
+    }
+  },
+  "diet_types": {
+    "title": "Explore Different Diet Types",
+    "keto": "Keto Diet",
+    "juice": "Juice Diet",
+    "intermittent": "Intermittent Fasting",
+    "low_carp": "Low Carp Diet",
+    "weight_gain": "Weight Gain Diet"
+  },
+  "keto_diet": {
+    "title": "Keto Diet",
+    "description": "The Keto diet is a low-carbohydrate, high-fat eating plan designed to induce a metabolic state called ketosis, where the body burns fat as its primary source of energy instead of carbohydrates.",
+    "how_to_follow": "How to Follow:",
+    "benefits": "Benefits:",
+    "challenges": "Challenges:",
+    "additional_tips": "Additional Tips:",
+    "steps": {
+      "reduce_carbs": "Reduce carbohydrate intake to below 50 grams per day.",
+      "increase_fats": "Increase consumption of healthy fats such as avocado, olive oil, and nuts.",
+      "moderate_protein": "Consume moderate amounts of protein to maintain muscle mass."
+    },
+    "benefits_list": {
+      "weight_loss": "May support weight loss by promoting fat burning.",
+      "stabilize_sugar": "Could help stabilize blood sugar levels and improve insulin sensitivity.",
+      "mental_clarity": "Might enhance mental clarity and energy levels."
+    },
+    "challenges_list": {
+      "keto_flu": "Initial adaptation phase may cause 'Keto Flu' symptoms such as fatigue and headaches.",
+      "strict_planning": "Requires strict adherence and careful meal planning to sustain."
+    },
+    "tips_list": {
+      "consult_nutritionist": "Consult a nutritionist before starting to ensure it aligns with your health needs.",
+      "monitor_electrolytes": "Monitor electrolyte levels and stay hydrated to prevent imbalances.",
+      "whole_foods": "Incorporate nutrient-dense, whole foods to maximize health benefits."
+    }
+  },
+  "juice_diet": {
+    "title": "Juice Diet",
+    "description": "The Juice Diet is a short-term dietary regimen that involves consuming only fresh fruit and vegetable juices for a specific period to detoxify the body and promote weight loss.",
+    "how_to_follow": "How to Follow:",
+    "benefits": "Benefits:",
+    "challenges": "Challenges:",
+    "additional_tips": "Additional Tips:",
+    "steps": {
+      "choose_fresh": "Choose a variety of fresh fruits and vegetables.",
+      "use_juicer": "Use a juicer or blender to extract the juice.",
+      "replace_meals": "Replace solid meals with juices for a duration of 3 to 7 days."
+    },
+    "benefits_list": {
+      "high_vitamins": "Provides a high intake of vitamins and minerals.",
+      "weight_loss": "May promote short-term weight loss.",
+      "detox_support": "Supports body detoxification and digestion."
+    },
+    "challenges_list": {
+      "low_protein": "Low in protein and fiber, which may lead to hunger and muscle loss.",
+      "not_sustainable": "Not sustainable as a long-term dietary solution.",
+      "weight_regain": "Possible rapid weight regain after returning to a regular diet."
+    },
+    "tips_list": {
+      "consult_nutritionist": "Consult a nutritionist before starting to ensure it's suitable for your health.",
+      "stay_hydrated": "Drink plenty of water to stay hydrated.",
+      "avoid_sugar": "Avoid adding sugar to juices to maintain their natural health benefits.",
+      "monitor_response": "Monitor how your body responds and discontinue if adverse effects occur."
+    }
+  },
+  "intermittent_fasting": {
+    "title": "Intermittent Fasting",
+    "description": "Intermittent fasting is an eating pattern that cycles between periods of fasting and eating. It does not specify which foods to eat, but rather when to eat them.",
+    "how_to_follow": "How to Follow:",
+    "benefits": "Benefits:",
+    "challenges": "Challenges:",
+    "additional_tips": "Additional Tips:",
+    "steps": {
+      "method_16_8": "16/8 Method: Fast for 16 hours and eat within an 8-hour window.",
+      "method_5_2": "5:2 Method: Eat normally for 5 days a week and reduce calorie intake to 500-600 for 2 days."
+    },
+    "benefits_list": {
+      "weight_loss": "May aid in weight loss and improve metabolism.",
+      "heart_health": "Could help in improving heart health and reducing chronic disease risks."
+    },
+    "challenges_list": {
+      "hunger": "May cause hunger and weakness initially.",
+      "not_suitable": "Not suitable for everyone, especially those with certain medical conditions."
+    },
+    "tips_list": {
+      "consult_nutritionist": "Consult a nutritionist before starting this regimen.",
+      "stay_hydrated": "Stay hydrated by drinking enough water during fasting periods."
+    }
+  },
+  "low_carb_diet": {
+    "title": "Low-Carb Diet",
+    "description": "The Low-Carb Diet focuses on reducing carbohydrate intake while increasing the consumption of proteins and healthy fats to promote weight loss and overall health improvement.",
+    "how_to_follow": "How to Follow:",
+    "benefits": "Benefits:",
+    "challenges": "Challenges:",
+    "additional_tips": "Additional Tips:",
+    "steps": {
+      "avoid_high_carb": "Avoid or limit high-carb foods such as bread, pasta, and rice.",
+      "increase_vegetables": "Increase consumption of non-starchy vegetables, proteins, and healthy fats.",
+      "choose_protein": "Choose protein sources like meat, fish, eggs, and nuts.",
+      "use_healthy_oils": "Use healthy oils such as olive oil and coconut oil for cooking."
+    },
+    "benefits_list": {
+      "weight_loss": "May support weight loss and improve blood sugar levels.",
+      "cholesterol": "Could help enhance cholesterol and triglyceride levels.",
+      "reduce_appetite": "Might reduce appetite and promote a sense of fullness."
+    },
+    "challenges_list": {
+      "fatigue": "May cause fatigue or dizziness initially due to carbohydrate reduction.",
+      "deficiencies": "Could lead to nutrient deficiencies if meal planning is not well balanced.",
+      "sustainability": "Might be difficult to sustain long-term due to food restrictions."
+    },
+    "tips_list": {
+      "consult_nutritionist": "Consult a nutritionist before starting to ensure nutritional needs are met.",
+      "stay_hydrated": "Drink plenty of water to stay hydrated.",
+      "monitor_body": "Monitor how your body responds and adjust the diet as needed.",
+      "fiber_rich": "Choose fiber-rich carbohydrate sources like leafy vegetables."
+    }
+  },
+  "weight_gain_diet": {
+    "title": "Weight Gain Diet",
+    "description": "The Weight Gain diet focuses on increasing calorie intake through nutrient-dense foods, ensuring a healthy and balanced weight gain approach.",
+    "how_to_follow": "How to Follow:",
+    "benefits": "Benefits:",
+    "challenges": "Challenges:",
+    "additional_tips": "Additional Tips:",
+    "steps": {
+      "increase_calories": "Increase daily calorie intake by 300-500 kcal.",
+      "eat_more_protein": "Consume more protein-rich foods like lean meats, dairy, and legumes.",
+      "healthy_fats": "Incorporate healthy fats from nuts, avocados, and olive oil.",
+      "frequent_meals": "Eat frequent meals and snacks throughout the day."
+    },
+    "benefits_list": {
+      "muscle_growth": "Supports muscle growth and strength.",
+      "energy_levels": "Enhances overall energy levels.",
+      "metabolic_rate": "Helps maintain a balanced metabolic rate."
+    },
+    "challenges_list": {
+      "meal_planning": "Requires consistent meal planning.",
+      "fat_gain": "May lead to unhealthy fat gain if not properly managed."
+    },
+    "tips_list": {
+      "stay_hydrated": "Stay hydrated and monitor micronutrient intake.",
+      "strength_training": "Incorporate strength training to maximize lean muscle gain.",
+      "avoid_junk_food": "Avoid excessive junk food intake to ensure quality weight gain."
+    }
+  },
+  "inbody_analyzer": {
+    "title": "InBody Report Analyzer",
+    "upload_prompt": "Upload an image of your InBody report:",
+    "analyze_button": "Analyze Report",
+    "analyzing": "Analyzing...",
+    "results": "Analysis Results:",
+    "weight": "Weight",
+    "bmi": "BMI",
+    "error_message": "Please upload a file."
+  }
+}

@@ -1,42 +1,45 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import DietTemplate from "../../components/DietTemplate";
 
 const WeightGainDiet = () => {
+  const { t } = useTranslation();
+
   return (
     <DietTemplate
-      title="Weight Gain Diet"
-      description="The Weight Gain diet focuses on increasing calorie intake through nutrient-dense foods, ensuring a healthy and balanced weight gain approach."
+      title={t("weight_gain_diet.title")}
+      description={t("weight_gain_diet.description")}
       sections={[
         {
-          title: "How to Follow:",
+          title: t("weight_gain_diet.how_to_follow"),
           items: [
-            "Increase daily calorie intake by 300-500 kcal.",
-            "Consume more protein-rich foods like lean meats, dairy, and legumes.",
-            "Incorporate healthy fats from nuts, avocados, and olive oil.",
-            "Eat frequent meals and snacks throughout the day.",
+            t("weight_gain_diet.steps.increase_calories"),
+            t("weight_gain_diet.steps.eat_more_protein"),
+            t("weight_gain_diet.steps.healthy_fats"),
+            t("weight_gain_diet.steps.frequent_meals"),
           ],
         },
         {
-          title: "Benefits:",
+          title: t("weight_gain_diet.benefits"),
           items: [
-            "Supports muscle growth and strength.",
-            "Enhances overall energy levels.",
-            "Helps maintain a balanced metabolic rate.",
+            t("weight_gain_diet.benefits_list.muscle_growth"),
+            t("weight_gain_diet.benefits_list.energy_levels"),
+            t("weight_gain_diet.benefits_list.metabolic_rate"),
           ],
         },
         {
-          title: "Challenges:",
+          title: t("weight_gain_diet.challenges"),
           items: [
-            "Requires consistent meal planning.",
-            "May lead to unhealthy fat gain if not properly managed.",
+            t("weight_gain_diet.challenges_list.meal_planning"),
+            t("weight_gain_diet.challenges_list.fat_gain"),
           ],
         },
         {
-          title: "Additional Tips:",
+          title: t("weight_gain_diet.additional_tips"),
           items: [
-            "Stay hydrated and monitor micronutrient intake.",
-            "Incorporate strength training to maximize lean muscle gain.",
-            "Avoid excessive junk food intake to ensure quality weight gain.",
+            t("weight_gain_diet.tips_list.stay_hydrated"),
+            t("weight_gain_diet.tips_list.strength_training"),
+            t("weight_gain_diet.tips_list.avoid_junk_food"),
           ],
         },
       ]}
