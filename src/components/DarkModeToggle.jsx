@@ -18,7 +18,7 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className=" text-gray-900 dark:text-gray-100  rounded-md transition-all"
+      className="text-xl text-gray-900 dark:text-gray-100  rounded-md transition-all"
     >
       {darkMode ? "☀️" : "🌙"}
     </button>
