@@ -182,19 +182,27 @@ const CalorieCalculator = () => {
                 datasets: [
                   {
                     label: "BMI Value",
-                    data: [18.5, 24.9, 29.9, 35],
+                    data: [
+                      bmi < 18.5 ? bmi : null,
+                      bmi >= 18.5 && bmi <= 24.9 ? bmi : null,
+                      bmi >= 25 && bmi <= 29.9 ? bmi : null,
+                      bmi >= 30 ? bmi : null,
+                    ],
                     backgroundColor: [
-                      "#97BE5A",
-                      "#FFE8C5",
-                      "#FFA27F",
-                      "#FF0000",
+                      bmi < 18.5 ? "#97BE5A" : "#E0E0E0",
+                      bmi >= 18.5 && bmi <= 24.9 ? "#00FF00" : "#E0E0E0",
+                      bmi >= 25 && bmi <= 29.9 ? "#FFA500" : "#E0E0E0",
+                      bmi >= 30 ? "#FF0000" : "#E0E0E0",
                     ],
                   },
                 ],
               }}
               options={{
                 responsive: true,
-                plugins: { title: { display: true, text: `Your BMI: ${bmi}` } },
+                plugins: {
+                  legend: { display: false },
+                  title: { display: true, text: `Your BMI: ${bmi}` },
+                },
               }}
             />
           </div>
