@@ -1,12 +1,19 @@
 import React, { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [isDietsOpen, setIsDietsOpen] = useState(false);
+  const location = useLocation();
+
+  React.useEffect(() => {
+    setIsOpen(false);
+    setIsDietsOpen(false);
+  }, [location.pathname]);
 
   return (
-    <nav className="bg-emerald-900 text-white  p-2 shadow-lg">
+    <nav className="bg-emerald-900 text-white py-4 px-3 shadow-xl">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-xl font-bold">HealthTec</div>
         <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -39,7 +46,9 @@ function Navbar() {
                 <Link to="/juice-diet">Juice Diet</Link>
               </li>
               <li className="hover:bg-green-500 py-2 px-4 cursor-pointer">
-                <Link to="/intermittent-fasting">IntermittentFasting Diet</Link>
+                <Link to="/intermittent-fasting">
+                  Intermittent Fasting Diet
+                </Link>
               </li>
               <li className="hover:bg-green-500 py-2 px-4 cursor-pointer">
                 <Link to="/low-carp-diet">Low Carp Diet</Link>

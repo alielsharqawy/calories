@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import CalorieCalculator from "./pages/CalorieCalculator";
 import InBodyUploader from "./pages/InBodyUploader";
 import FeatureGrid from "./components/FeatureGrid";
+import DietTypes from "./pages/DietTypes";
 function App() {
   return (
     <Router>
@@ -28,6 +29,7 @@ function App() {
           <Route path="/calorie-calculator" element={<CalorieCalculator />} />
           <Route path="/body-info" element={<InBodyUploader />} />
           <Route path="/feature-grid" element={<FeatureGrid />} />
+          <Route path="/diet-types" element={<DietTypes />} />
         </Routes>
 
         <Footer />

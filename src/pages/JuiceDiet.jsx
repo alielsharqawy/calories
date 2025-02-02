@@ -1,47 +1,75 @@
-// src/pages/JuiceDiet.jsx
 import React from "react";
 
 function JuiceDiet() {
   return (
-    <div className="container mx-auto p-4">
-      <h2 className="text-2xl font-bold mb-4">رجيم العصير</h2>
-      <p className="mb-4">
-        رجيم العصير هو نظام غذائي يعتمد على استهلاك العصائر الطازجة فقط لفترة
-        محددة، بهدف تطهير الجسم وفقدان الوزن.
-      </p>
-      <h3 className="text-xl font-semibold mb-2">كيفية التطبيق:</h3>
-      <ul className="list-disc list-inside mb-4">
-        <li>اختيار مجموعة متنوعة من الفواكه والخضروات الطازجة.</li>
-        <li>عصر المكونات باستخدام عصارة أو خلاط.</li>
-        <li>
-          تناول العصائر بدلاً من الوجبات الصلبة لمدة تتراوح بين 3 إلى 7 أيام.
-        </li>
-      </ul>
-      <h3 className="text-xl font-semibold mb-2">الإيجابيات:</h3>
-      <ul className="list-disc list-inside mb-4">
-        <li>زيادة استهلاك الفيتامينات والمعادن.</li>
-        <li>قد يساعد في فقدان الوزن السريع على المدى القصير.</li>
-        <li>يساهم في تطهير الجسم من السموم.</li>
-      </ul>
-      <h3 className="text-xl font-semibold mb-2">السلبيات:</h3>
-      <ul className="list-disc list-inside mb-4">
-        <li>
-          نقص البروتين والألياف، مما قد يؤدي إلى الشعور بالجوع وفقدان الكتلة
-          العضلية.
-        </li>
-        <li>قد لا يكون مستدامًا على المدى الطويل.</li>
-        <li>
-          احتمالية استعادة الوزن المفقود بسرعة بعد العودة إلى النظام الغذائي
-          المعتاد.
-        </li>
-      </ul>
-      <h3 className="text-xl font-semibold mb-2">نصائح إضافية:</h3>
-      <ul className="list-disc list-inside mb-4">
-        <li>استشارة أخصائي تغذية قبل البدء في هذا النظام.</li>
-        <li>التأكد من شرب كميات كافية من الماء.</li>
-        <li>تجنب إضافة السكر إلى العصائر.</li>
-        <li>مراقبة استجابة الجسم والتوقف في حالة الشعور بأي أعراض سلبية.</li>
-      </ul>
+    <div className="container mx-auto p-6 max-w-4xl">
+      <h2 className="text-4xl font-bold text-center text-orange-600 mb-8">
+        Juice Diet
+      </h2>
+      <div className="bg-gradient-to-r from-orange-100 to-yellow-100 p-6 rounded-lg shadow-lg mb-8 text-center">
+        <p className="text-lg text-gray-800 leading-relaxed">
+          The Juice Diet is a short-term dietary regimen that involves consuming
+          only fresh fruit and vegetable juices for a specific period to
+          detoxify the body and promote weight loss.
+        </p>
+      </div>
+
+      <div className="space-y-8">
+        {[
+          {
+            title: "How to Follow:",
+            items: [
+              "Choose a variety of fresh fruits and vegetables.",
+              "Use a juicer or blender to extract the juice.",
+              "Replace solid meals with juices for a duration of 3 to 7 days.",
+            ],
+          },
+          {
+            title: "Benefits:",
+            items: [
+              "Provides a high intake of vitamins and minerals.",
+              "May promote short-term weight loss.",
+              "Supports body detoxification and digestion.",
+            ],
+          },
+          {
+            title: "Challenges:",
+            items: [
+              "Low in protein and fiber, which may lead to hunger and muscle loss.",
+              "Not sustainable as a long-term dietary solution.",
+              "Possible rapid weight regain after returning to a regular diet.",
+            ],
+          },
+          {
+            title: "Additional Tips:",
+            items: [
+              "Consult a nutritionist before starting to ensure it's suitable for your health.",
+              "Drink plenty of water to stay hydrated.",
+              "Avoid adding sugar to juices to maintain their natural health benefits.",
+              "Monitor how your body responds and discontinue if adverse effects occur.",
+            ],
+          },
+        ].map((section, index) => (
+          <div
+            key={index}
+            className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition-shadow border-l-4 border-orange-500"
+          >
+            <h3 className="text-2xl font-semibold text-orange-600 mb-4 flex items-center">
+              <span className="inline-block bg-orange-500 text-white px-3 py-1 rounded-lg mr-2">
+                {index + 1}
+              </span>
+              {section.title}
+            </h3>
+            <ul className="list-disc list-inside text-gray-800 space-y-2 text-lg">
+              {section.items.map((item, idx) => (
+                <li key={idx} className="pl-2">
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
