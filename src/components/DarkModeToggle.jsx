@@ -19,7 +19,7 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="flex items-center gap-2 px-2 py-2 rounded-md transition-all"
+      className="flex items-center gap-2 px-2 py-2 border-none outline-none rounded-md transition-all"
     >
       {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
       <span>{darkMode ? "" : ""}</span>

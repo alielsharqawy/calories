@@ -31,7 +31,7 @@ const FeatureGrid = () => {
   ];
 
   return (
-    <div className="py-12 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
+    <div className="w-full min-h-screen px-4 sm:px-6 lg:px-20 py-5 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-green-500 dark:text-green-400 text-xl font-semibold tracking-wide uppercase">

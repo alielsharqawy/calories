@@ -16,7 +16,7 @@ const LanguageToggle = () => {
   return (
     <button
       onClick={toggleLanguage}
-      className="flex items-center gap-2 px-2 py-2  text-xl text-white  rounded-md transition-all"
+      className="flex items-center gap-2 px-2 py-2 border-none outline-none text-xl text-white  rounded-md transition-all"
     >
       <Globe size={20} />
       <span>{lang}</span>

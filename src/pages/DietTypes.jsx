@@ -16,7 +16,7 @@ const DietTypes = () => {
 
   return (
     <div className="w-full min-h-screen px-4 sm:px-6 lg:px-20 py-5 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
-      <h1 className="text-3xl font-bold text-center text-emerald-700 dark:text-emerald-400 mb-8">
+      <h1 className="text-2xl sm:text-3xl font-bold text-center text-emerald-700 dark:text-emerald-400 mb-8">
         {t("diet_types.title")}
       </h1>
       <div className="space-y-6">
@@ -45,13 +45,13 @@ const DietTypes = () => {
           >
             <button
               onClick={() => toggleSection(id)}
-              className="w-full flex justify-between items-center p-4 bg-emerald-100 dark:bg-emerald-700 hover:bg-emerald-200 dark:hover:bg-emerald-600 text-emerald-900 dark:text-gray-100 font-semibold text-lg"
+              className="w-full flex justify-between items-center p-3 sm:p-4 bg-emerald-100 dark:bg-emerald-700 hover:bg-emerald-200 dark:hover:bg-emerald-600 text-emerald-900 dark:text-gray-100 font-semibold text-base sm:text-lg"
             >
               {id}. {title}
               <span className="text-xl">{openSection === id ? "−" : "+"}</span>
             </button>
             {openSection === id && (
-              <div className="p-4 bg-white dark:bg-gray-900 w-full min-h-[200px] sm:min-h-[250px] lg:min-h-[300px]">
+              <div className="p-4 bg-white dark:bg-gray-900 w-full min-h-[150px] sm:min-h-[250px] lg:min-h-[300px] overflow-x-auto">
                 {component}
               </div>
             )}

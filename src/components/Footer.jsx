@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 function Footer() {
+  const { t } = useTranslation();
   const [isAtBottom, setIsAtBottom] = useState(false);
 
   useEffect(() => {
@@ -16,10 +18,7 @@ function Footer() {
   return (
     <footer className="bg-emerald-500 dark:bg-gray-900 text-white transition-all py-4 px-3 shadow-xl">
       <div className="container mx-auto text-center text-sm md:text-base">
-        <p>
-          &copy; {new Date().getFullYear()} Calorie Tracking App. All rights
-          reserved.
-        </p>
+        <p>{t("footer.copyright")}</p>
       </div>
     </footer>
   );

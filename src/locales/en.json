@@ -214,5 +214,8 @@
     "weight": "Weight",
     "bmi": "BMI",
     "error_message": "Please upload a file."
+  },
+  "footer": {
+    "copyright": "© 2025 Calorie Tracking App. All rights reserved."
   }
 }
