@@ -42,7 +42,7 @@ function Navbar() {
             </li>
             <li className="relative">
               <button
-                className="text-lg font-medium flex items-center cursor-pointer hover:text-orange-500"
+                className="text-lg font-medium flex items-center cursor-pointer bg-emerald-500 dark:bg-gray-900 text-white hover:text-orange-500"
                 onClick={() => setIsDietsOpen(!isDietsOpen)}
               >
                 {t("navbar.diets")} <ChevronDown size={16} className="ml-1" />
