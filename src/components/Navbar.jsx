@@ -35,7 +35,7 @@ function Navbar() {
               isOpen ? "block" : "hidden"
             }`}
           >
-            <li className="text-lg font-medium cursor-pointer hover:text-orange-500">
+            <li className="text-lg font-medium cursor-pointer hover:text-orange-500 px-2">
               <Link to="/" onClick={handleLinkClick}>
                 {t("navbar.home")}
               </Link>
