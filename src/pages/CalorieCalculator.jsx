@@ -153,7 +153,11 @@ const CalorieCalculator = () => {
             </h3>
             <Pie
               data={{
-                labels: ["Protein", "Carbohydrates", "Fats"],
+                labels: [
+                  `Protein: ${macros.protein}g`,
+                  `Carbohydrates: ${macros.carbs}g`,
+                  `Fats: ${macros.fats}g`,
+                ],
                 datasets: [
                   {
                     data: [macros.protein, macros.carbs, macros.fats],
