@@ -18,10 +18,10 @@ function HomePage() {
       <div className="container flex flex-col md:flex-row items-center py-5 px-20">
 
         <div className="md:w-1/2 text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-gray-100 leading-tight">
+          <h1 className="text-3xl md:text-6xl font-bold leading-tight">
             {t("home.title")}
           </h1>
-          <h2 className="text-3xl md:text-5xl font-extrabold text-emerald-700 mt-2">
+          <h2 className="text-2xl md:text-5xl font-extrabold text-emerald-700 mt-2">
             {t("home.subtitle")}
           </h2>
           <p className="text-gray-600 dark:text-gray-300 mt-4 mb-6 leading-relaxed">

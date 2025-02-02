@@ -1,10 +1,10 @@
 import React from "react";
 import { FaAppleAlt, FaCalculator, FaInfoCircle } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next"; // استيراد الترجمة
+import { useTranslation } from "react-i18next"; 
 
 const FeatureGrid = () => {
-  const { t } = useTranslation(); // استخدام الترجمة
+  const { t } = useTranslation(); 
 
   const features = [
     {

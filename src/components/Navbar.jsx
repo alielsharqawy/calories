@@ -22,20 +22,20 @@ function Navbar() {
   };
 
   return (
-    <nav className="bg-emerald-500 dark:bg-gray-900 text-white transition-all py-4 px-3 shadow-xl">
+    <nav className="bg-emerald-500 dark:bg-gray-900 text-white transition-all py-4 px-3 shadow-xl flex justify-between items-center">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-xl font-bold text-white">
+        <div className="text-xl font-bold">
           <Link to="/" onClick={handleLinkClick}>
             {t("navbar.brand_name")}
           </Link>
         </div>
-        <div className="flex justify-center items-center gap-5">
+        <div className="flex justify-center items-center gap-3">
           <ul
-            className={`md:flex md:space-x-6 absolute md:static left-0 top-16 w-full md:w-auto bg-emerald-500 dark:bg-gray-900 text-white md:bg-transparent p-4 space-y-4 md:space-y-0 transition-all duration-300 ${
+            className={`md:flex md:space-x-6 absolute md:static left-0 top-16 w-full md:w-auto md:bg-transparent p-4 space-y-4 md:space-y-0 transition-all duration-300 ${
               isOpen ? "block" : "hidden"
             }`}
           >
-            <li className="text-lg font-medium cursor-pointer hover:text-orange-500 px-3">
+            <li className="text-lg font-medium cursor-pointer hover:text-orange-500">
               <Link to="/" onClick={handleLinkClick}>
                 {t("navbar.home")}
               </Link>

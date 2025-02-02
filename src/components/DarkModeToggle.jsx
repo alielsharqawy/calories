@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { FiSun, FiMoon } from "react-icons/fi";
 
 const DarkModeToggle = () => {
   const [darkMode, setDarkMode] = useState(
@@ -18,9 +19,10 @@ const DarkModeToggle = () => {
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className="flex items-center gap-2 px-4 py-2  text-xl text-white  rounded-md transition-all shadow-md hover:bg-green-600"
+      className="flex items-center gap-2 px-2 py-2 rounded-md transition-all"
     >
-      {darkMode ? "☀️ light" : "🌙 dark"}
+      {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
+      <span>{darkMode ? "" : ""}</span>
     </button>
   );
 };
