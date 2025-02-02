@@ -30,6 +30,7 @@ const CalorieCalculator = () => {
   const [calories, setCalories] = useState(null);
   const [macros, setMacros] = useState(null);
   const [bmi, setBmi] = useState(null);
+  const [dietPlan, setDietPlan] = useState(null);
 
   const calculateBMR = () => {
     if (!age || !weight || !height) {
@@ -53,12 +54,29 @@ const CalorieCalculator = () => {
 
     const bmiValue = (weight / ((height / 100) * (height / 100))).toFixed(1);
     setBmi(bmiValue);
+
+    determineDietPlan(dailyCalories, bmiValue);
+  };
+
+  const determineDietPlan = (dailyCalories, bmi) => {
+    let plan;
+    if (bmi < 18.5) {
+      plan =
+        "Weight Gain Diet: Increase your calorie intake by 300-500 kcal per day.";
+    } else if (bmi >= 18.5 && bmi <= 24.9) {
+      plan =
+        "Maintenance Diet: Maintain your current calorie intake for a balanced lifestyle.";
+    } else if (bmi >= 25) {
+      plan =
+        "Weight Loss Diet: Reduce your calorie intake by 300-500 kcal per day.";
+    }
+    setDietPlan(plan);
   };
 
   return (
-    <div className="flex flex-col lg:flex-row lg:space-x-6 p-6 rounded-lg shadow-lg w-full max-w-7xl mx-auto">
-      <div className="w-full lg:w-1/2 p-6 bg-white rounded-lg shadow-md">
-        <h2 className="text-3xl font-bold mb-6 text-center text-emerald-700">
+    <div className="flex flex-col lg:flex-row lg:space-x-6 p-6 w-full mx-auto dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
+      <div className="w-full lg:w-1/2 p-6 dark:bg-gray-800 rounded-lg shadow-md">
+        <h2 className="text-3xl font-bold mb-6 text-center text-emerald-700 dark:text-emerald-400">
           Calorie Calculator
         </h2>
         {[
@@ -67,25 +85,25 @@ const CalorieCalculator = () => {
           { label: "Height (cm)", value: height, setter: setHeight },
         ].map(({ label, value, setter }) => (
           <div key={label} className="mb-5">
-            <label className="block text-gray-700 font-medium mb-2">
+            <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
               {label}:
             </label>
             <input
               type="number"
               value={value}
               onChange={(e) => setter(e.target.value)}
-              className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+              className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-emerald-500 dark:bg-gray-700 dark:text-white"
             />
           </div>
         ))}
         <div className="mb-5">
-          <label className="block text-gray-700 font-medium mb-2">
+          <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
             Gender:
           </label>
           <select
             value={gender}
             onChange={(e) => setGender(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+            className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-emerald-500 dark:bg-gray-700 dark:text-white"
           >
             <option value="male">Male</option>
             <option value="female">Female</option>
@@ -98,7 +116,7 @@ const CalorieCalculator = () => {
           <select
             value={activityLevel}
             onChange={(e) => setActivityLevel(e.target.value)}
-            className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500"
+            className="w-full p-3 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-2 focus:ring-emerald-500 dark:bg-gray-700 dark:text-white"
           >
             {["1.2", "1.375", "1.55", "1.725", "1.9"].map((level, idx) => (
               <option key={idx} value={level}>
@@ -122,32 +140,24 @@ const CalorieCalculator = () => {
           Calculate
         </button>
         {calories && (
-          <div className="mt-6 p-4 bg-emerald-100 text-emerald-800 rounded-lg text-center">
+          <div className="mt-6 p-4 bg-emerald-100 dark:bg-emerald-800 text-emerald-800 dark:text-emerald-200 rounded-lg text-center">
             Your daily caloric needs: <strong>{calories}</strong> kcal.
           </div>
         )}
       </div>
       <div className="w-full lg:w-1/2 flex flex-col space-y-6">
         {macros && (
-          <div className="p-6 bg-white rounded-lg shadow-md">
-            <h3 className="text-2xl font-bold mb-6 text-center text-emerald-700">
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+            <h3 className="text-2xl font-bold mb-6 text-center text-emerald-700 dark:text-emerald-400">
               Macronutrient Distribution
             </h3>
             <Pie
               data={{
-                labels: [
-                  `Protein: ${macros.protein}g`,
-                  `Carbohydrates: ${macros.carbs}g`,
-                  `Fats: ${macros.fats}g`,
-                ],
+                labels: ["Protein", "Carbohydrates", "Fats"],
                 datasets: [
                   {
                     data: [macros.protein, macros.carbs, macros.fats],
-                    backgroundColor: [
-                      "rgba(75, 192, 192, 0.6)",
-                      "rgba(255, 206, 86, 0.6)",
-                      "rgba(255, 99, 132, 0.6)",
-                    ],
+                    backgroundColor: ["#118B50", "#5DB996", "#E3F0AF"],
                   },
                 ],
               }}
@@ -162,8 +172,8 @@ const CalorieCalculator = () => {
           </div>
         )}
         {bmi && (
-          <div className="p-6 bg-white rounded-lg shadow-md">
-            <h3 className="text-2xl font-bold mb-6 text-center text-emerald-700">
+          <div className="p-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+            <h3 className="text-2xl font-bold mb-6 text-center text-emerald-700 dark:text-emerald-400">
               BMI Indicator
             </h3>
             <Bar
@@ -173,7 +183,12 @@ const CalorieCalculator = () => {
                   {
                     label: "BMI Value",
                     data: [18.5, 24.9, 29.9, 35],
-                    backgroundColor: ["blue", "green", "orange", "red"],
+                    backgroundColor: [
+                      "#97BE5A",
+                      "#FFE8C5",
+                      "#FFA27F",
+                      "#FF0000",
+                    ],
                   },
                 ],
               }}

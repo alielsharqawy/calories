@@ -14,15 +14,11 @@ function Footer() {
   }, []);
 
   return (
-    <footer
-      className={`bg-emerald-900 text-white py-6 border-t border-gray-700 w-full  ${
-        isAtBottom ? "opacity-100" : "opacity-100 pointer-events-none"
-      }`}
-    >
+    <footer className="bg-emerald-900 text-white py-6 border-t border-gray-700 w-full  mt-5">
       <div className="container mx-auto text-center text-sm md:text-base">
         <p>
-          &copy; {new Date().getFullYear()} تطبيق تتبع السعرات الحرارية. جميع
-          الحقوق محفوظة.
+          &copy; {new Date().getFullYear()} Calorie Tracking App. All rights
+          reserved.
         </p>
       </div>
     </footer>

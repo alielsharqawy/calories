@@ -3,21 +3,21 @@ import { Link } from "react-router-dom";
 import dietHeroImage from "../assets/hero.png"; // Ensure this image is optimized
 import FeatureGrid from "../components/FeatureGrid";
 import CalorieCalculator from "./CalorieCalculator";
+import Footer from "../components/Footer";
 
 function HomePage() {
   return (
-    <div>
-      {/* Hero Section */}
-      <div className="container flex flex-col md:flex-row items-center py-5 px-10">
+    <div className="min-h-screen flex flex-col bg-lightBg dark:bg-gray-900 text-gray-900 dark:text-gray-900 transition-all">
+      <div className="container flex flex-col md:flex-row items-center py-5 px-20">
         {/* Left Section */}
         <div className="md:w-1/2 text-center md:text-left">
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-800 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-gray-800 dark:text-gray-100 leading-tight">
             Discover the Best Diet Plans
           </h1>
           <h2 className="text-3xl md:text-5xl font-extrabold text-emerald-700 mt-2">
             To Achieve Your Health Goals
           </h2>
-          <p className="text-gray-600 mt-4 mb-6 leading-relaxed">
+          <p className="text-gray-600 dark:text-gray-300 mt-4 mb-6 leading-relaxed">
             Welcome to our website! We offer comprehensive information on
             various diet plans to help you achieve your health objectives. Start
             your journey today and find the diet that's right for you.
@@ -42,6 +42,7 @@ function HomePage() {
       </div>
       <FeatureGrid />
       <CalorieCalculator />
+      <Footer />
     </div>
   );
 }

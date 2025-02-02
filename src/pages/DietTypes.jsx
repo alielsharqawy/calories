@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import KetoDiet from "./KetoDiet";
-import JuiceDiet from "./JuiceDiet";
-import IntermittentFasting from "./IntermittentFasting";
-import LowCarpDiet from "./LowCarpDiet";
+import KetoDiet from "./diet_type/KetoDiet";
+import JuiceDiet from "./diet_type/JuiceDiet";
+import IntermittentFasting from "./diet_type/IntermittentFasting";
+import LowCarpDiet from "./diet_type/LowCarpDiet";
+import WeightGainDiet from "./diet_type/WeightGainDiet";
 
 const DietTypes = () => {
   const [openSection, setOpenSection] = useState(null);
@@ -12,70 +13,40 @@ const DietTypes = () => {
   };
 
   return (
-    <div className="container mx-auto p-6 space-y-8">
-      <h1 className="text-3xl font-bold text-center text-emerald-700 mb-8">
+    <div className="w-full min-h-screen px-4 md:px-20 py-5 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
+      <h1 className="text-3xl font-bold text-center text-emerald-700 dark:text-emerald-400 mb-8">
         Explore Different Diet Types
       </h1>
       <div className="space-y-6">
-        <div className="border rounded-lg shadow-lg overflow-hidden">
-          <button
-            onClick={() => toggleSection(1)}
-            className="w-full flex justify-between items-center p-4 bg-emerald-100 hover:bg-emerald-200 text-emerald-900 font-semibold text-lg"
+        {[
+          { id: 1, title: "Keto Diet", component: <KetoDiet /> },
+          { id: 2, title: "Juice Diet", component: <JuiceDiet /> },
+          {
+            id: 3,
+            title: "Intermittent Fasting",
+            component: <IntermittentFasting />,
+          },
+          { id: 4, title: "Low Carp Diet", component: <LowCarpDiet /> },
+          { id: 5, title: "Weight Gain Diet", component: <WeightGainDiet /> },
+        ].map(({ id, title, component }) => (
+          <div
+            key={id}
+            className="rounded-lg shadow-x overflow-hidden bg-gray-100 dark:bg-gray-800"
           >
-            1. Keto Diet
-            <span className="text-xl">{openSection === 1 ? "−" : "+"}</span>
-          </button>
-          {openSection === 1 && (
-            <div className="p-4 bg-white">
-              <KetoDiet />
-            </div>
-          )}
-        </div>
-
-        <div className="border rounded-lg shadow-lg overflow-hidden">
-          <button
-            onClick={() => toggleSection(2)}
-            className="w-full flex justify-between items-center p-4 bg-emerald-100 hover:bg-emerald-200 text-emerald-900 font-semibold text-lg"
-          >
-            2. Juice Diet
-            <span className="text-xl">{openSection === 2 ? "−" : "+"}</span>
-          </button>
-          {openSection === 2 && (
-            <div className="p-4 bg-white">
-              <JuiceDiet />
-            </div>
-          )}
-        </div>
-
-        <div className="border rounded-lg shadow-lg overflow-hidden">
-          <button
-            onClick={() => toggleSection(3)}
-            className="w-full flex justify-between items-center p-4 bg-emerald-100 hover:bg-emerald-200 text-emerald-900 font-semibold text-lg"
-          >
-            3. Intermittent Fasting
-            <span className="text-xl">{openSection === 3 ? "−" : "+"}</span>
-          </button>
-          {openSection === 3 && (
-            <div className="p-4 bg-white">
-              <IntermittentFasting />
-            </div>
-          )}
-        </div>
-
-        <div className="border rounded-lg shadow-lg overflow-hidden">
-          <button
-            onClick={() => toggleSection(4)}
-            className="w-full flex justify-between items-center p-4 bg-emerald-100 hover:bg-emerald-200 text-emerald-900 font-semibold text-lg"
-          >
-            4. Low Carb Diet
-            <span className="text-xl">{openSection === 4 ? "−" : "+"}</span>
-          </button>
-          {openSection === 4 && (
-            <div className="p-4 bg-white">
-              <LowCarpDiet />
-            </div>
-          )}
-        </div>
+            <button
+              onClick={() => toggleSection(id)}
+              className="w-full flex justify-between items-center p-4 bg-emerald-100 dark:bg-emerald-700 hover:bg-emerald-200 dark:hover:bg-emerald-600 text-emerald-900 dark:text-gray-100 font-semibold text-lg"
+            >
+              {id}. {title}
+              <span className="text-xl">{openSection === id ? "−" : "+"}</span>
+            </button>
+            {openSection === id && (
+              <div className="p-4 bg-white dark:bg-gray-900 w-full min-h-[300px]">
+                {component}
+              </div>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   );

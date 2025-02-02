@@ -30,13 +30,13 @@ const FeatureGrid = () => {
   ];
 
   return (
-    <div className="py-12">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="py-12 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-green-500 text-xl font-semibold tracking-wide uppercase">
+          <h2 className="text-green-500 dark:text-green-400 text-xl font-semibold tracking-wide uppercase">
             Our Features
           </h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
             What We Offer
           </p>
         </div>
@@ -44,15 +44,15 @@ const FeatureGrid = () => {
           {features.map((feature) => (
             <Link to={feature.link} key={feature.id} className="group">
               <div className="pt-6 h-full">
-                <div className="flow-root bg-slate-50 rounded-lg px-6 pb-8 shadow-md group-hover:shadow-lg transition-shadow duration-200 h-full">
+                <div className="flow-root bg-slate-50 dark:bg-gray-800 rounded-lg px-6 pb-8 shadow-md dark:shadow-lg group-hover:shadow-lg transition-shadow duration-200 h-full">
                   <div className="-mt-6">
                     <div className="flex items-center justify-center">
                       {feature.icon}
                     </div>
-                    <h3 className="mt-8 text-lg font-medium text-gray-900 text-center group-hover:text-emerald-700 transition-colors duration-200">
+                    <h3 className="mt-8 text-lg font-medium text-gray-900 dark:text-gray-100 text-center group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors duration-200">
                       {feature.title}
                     </h3>
-                    <p className="mt-5 text-base text-gray-500 text-center">
+                    <p className="mt-5 text-base text-gray-500 dark:text-gray-300 text-center">
                       {feature.description}
                     </p>
                   </div>
