@@ -110,7 +110,7 @@ const CalorieCalculator = () => {
           </select>
         </div>
         <div className="mb-5">
-          <label className="block text-gray-700 font-medium mb-2">
+          <label className="block text-gray-700 dark:text-gray-300 font-medium mb-2">
             Activity Level:
           </label>
           <select
