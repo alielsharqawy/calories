@@ -13,7 +13,7 @@ const DietTypes = () => {
   };
 
   return (
-    <div className="w-full min-h-screen px-4 md:px-20 py-5 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
+    <div className="w-full min-h-screen px-4 sm:px-6 lg:px-20 py-5 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
       <h1 className="text-3xl font-bold text-center text-emerald-700 dark:text-emerald-400 mb-8">
         Explore Different Diet Types
       </h1>
@@ -26,12 +26,12 @@ const DietTypes = () => {
             title: "Intermittent Fasting",
             component: <IntermittentFasting />,
           },
-          { id: 4, title: "Low Carp Diet", component: <LowCarpDiet /> },
+          { id: 4, title: "Low Carb Diet", component: <LowCarpDiet /> },
           { id: 5, title: "Weight Gain Diet", component: <WeightGainDiet /> },
         ].map(({ id, title, component }) => (
           <div
             key={id}
-            className="rounded-lg shadow-x overflow-hidden bg-gray-100 dark:bg-gray-800"
+            className="border rounded-lg shadow-lg overflow-hidden bg-gray-100 dark:bg-gray-800"
           >
             <button
               onClick={() => toggleSection(id)}
@@ -41,7 +41,7 @@ const DietTypes = () => {
               <span className="text-xl">{openSection === id ? "−" : "+"}</span>
             </button>
             {openSection === id && (
-              <div className="p-4 bg-white dark:bg-gray-900 w-full min-h-[300px]">
+              <div className="p-4 bg-white dark:bg-gray-900 w-full min-h-[200px] sm:min-h-[250px] lg:min-h-[300px]">
                 {component}
               </div>
             )}
