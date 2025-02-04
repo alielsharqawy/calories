@@ -1,7 +1,6 @@
 // src/App.jsx
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Footer from "./components/Footer";
 import Home from "./pages/Home";
 import JuiceDiet from "./pages/diet_type/JuiceDiet";
 import IntermittentFasting from "./pages/diet_type/IntermittentFasting";
@@ -13,6 +12,8 @@ import InBodyUploader from "./pages/InBodyUploader";
 import FeatureGrid from "./components/FeatureGrid";
 import DietTypes from "./pages/DietTypes";
 import WeightGainDiet from "./pages/diet_type/WeightGainDiet";
+import HealthyRecipesLibrary from "./pages/HealthyRecipesLibrary";
+
 function App() {
   return (
     <Router>
@@ -27,11 +28,13 @@ function App() {
           />
           <Route path="/keto-diet" element={<KetoDiet />} />
           <Route path="/low-carp-diet" element={<LowCarpDiet />} />
+          <Route path="/gain-diet" element={<WeightGainDiet />} />
+          <Route path="/feature-grid" element={<FeatureGrid />} />
           <Route path="/calorie-calculator" element={<CalorieCalculator />} />
           <Route path="/body-info" element={<InBodyUploader />} />
-          <Route path="/feature-grid" element={<FeatureGrid />} />
           <Route path="/diet-types" element={<DietTypes />} />
-          <Route path="/gain-diet" element={<WeightGainDiet />} />
+          <Route path="/health-library" element={<HealthyRecipesLibrary />} />
+         
         </Routes>
       </div>
     </Router>

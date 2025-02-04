@@ -1,10 +1,21 @@
 import React from "react";
-import { FaAppleAlt, FaCalculator, FaInfoCircle } from "react-icons/fa";
-import { Link } from "react-router-dom";
-import { useTranslation } from "react-i18next"; 
+import {
+  FaAppleAlt,
+  FaCalculator,
+  FaBook,
+  FaDumbbell,
+  FaPenFancy,
+} from "react-icons/fa";
+import { Link as ScrollLink } from "react-scroll";
+import { useTranslation } from "react-i18next";
+import DietTypes from "../pages/DietTypes";
+import CalorieCalculator from "../pages/CalorieCalculator";
+import HealthyRecipesLibrary from "../pages/HealthyRecipesLibrary";
+import InBodyAnalyzer from "../pages/InBodyUploader";
+
 
 const FeatureGrid = () => {
-  const { t } = useTranslation(); 
+  const { t } = useTranslation();
 
   const features = [
     {
@@ -12,21 +23,28 @@ const FeatureGrid = () => {
       icon: <FaAppleAlt className="w-12 h-12 text-green-500" />,
       title: t("features.diet_types.title"),
       description: t("features.diet_types.description"),
-      link: "/diet-types",
+      target: "diet-types",
     },
     {
       id: 2,
       icon: <FaCalculator className="w-12 h-12 text-yellow-500" />,
       title: t("features.calories_calculator.title"),
       description: t("features.calories_calculator.description"),
-      link: "/calorie-calculator",
+      target: "calorie-calculator",
     },
     {
       id: 3,
-      icon: <FaInfoCircle className="w-12 h-12 text-blue-500" />,
+      icon: <FaDumbbell className="w-12 h-12 text-blue-500" />,
+      title: t("features.healthy_recipes.title"),
+      description: t("features.healthy_recipes.description"),
+      target: "healthy-recipes",
+    },
+    {
+      id: 4,
+      icon: <FaBook className="w-12 h-12 text-red-500" />,
       title: t("features.inbody_info.title"),
       description: t("features.inbody_info.description"),
-      link: "/body-info",
+      target: "body-info",
     },
   ];
 
@@ -37,13 +55,20 @@ const FeatureGrid = () => {
           <h2 className="text-green-500 dark:text-green-400 text-xl font-semibold tracking-wide uppercase">
             {t("features.section_title")}
           </h2>
-          <p className="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
+          <p className="mt-2 text-xl leading-8 font-extrabold tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl">
             {t("features.section_subtitle")}
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
           {features.map((feature) => (
-            <Link to={feature.link} key={feature.id} className="group">
+            <ScrollLink
+              to={feature.target}
+              key={feature.id}
+              smooth={true}
+              duration={500}
+              offset={-100}
+              className="group cursor-pointer"
+            >
               <div className="pt-6 h-full">
                 <div className="flow-root bg-slate-50 dark:bg-gray-800 rounded-lg px-6 pb-8 shadow-md dark:shadow-lg group-hover:shadow-lg transition-shadow duration-200 h-full">
                   <div className="-mt-6">
@@ -59,9 +84,23 @@ const FeatureGrid = () => {
                   </div>
                 </div>
               </div>
-            </Link>
+            </ScrollLink>
           ))}
         </div>
+      </div>
+
+      {/* الأقسام المستهدفة داخل الصفحة */}
+      <div id="diet-types" className="py-10">
+        <DietTypes />
+      </div>
+      <div id="calorie-calculator" className="py-10">
+        <CalorieCalculator />
+      </div>
+      <div id="healthy-recipes" className="py-10">
+        <HealthyRecipesLibrary />
+      </div>
+      <div id="body-info" className="py-10">
+        <InBodyAnalyzer />
       </div>
     </div>
   );

@@ -50,7 +50,7 @@ const InBodyAnalyzer = () => {
   };
 
   return (
-    <div className="w-full min-h-screen px-4 md:px-20 py-5 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
+    <div className="w-full px-4 md:px-20 py-5 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
       <h1 className="text-2xl font-bold mb-4 text-gray-900 dark:text-gray-100">
         {t("inbody_analyzer.title")}
       </h1>

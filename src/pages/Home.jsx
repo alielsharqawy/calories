@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import dietHeroImage from "../assets/hero.png";
 import FeatureGrid from "../components/FeatureGrid";
-import CalorieCalculator from "./CalorieCalculator";
 import Footer from "../components/Footer";
 
 function HomePage() {
@@ -16,7 +15,6 @@ function HomePage() {
   return (
     <div className="min-h-screen flex flex-col bg-lightBg dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
       <div className="container flex flex-col md:flex-row items-center py-5 px-20">
-
         <div className="md:w-1/2 text-center md:text-left">
           <h1 className="text-3xl md:text-6xl font-bold leading-tight">
             {t("home.title")}
@@ -45,7 +43,6 @@ function HomePage() {
         </div>
       </div>
       <FeatureGrid />
-      <CalorieCalculator />
       <Footer />
     </div>
   );

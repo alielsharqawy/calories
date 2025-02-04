@@ -15,8 +15,8 @@ const DietTypes = () => {
   };
 
   return (
-    <div className="w-full min-h-screen px-4 sm:px-6 lg:px-20 py-5 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
-      <h1 className="text-2xl sm:text-3xl font-bold text-center text-emerald-700 dark:text-emerald-400 mb-8">
+    <div className="p-6 w-full mx-auto sm:px-6 lg:px-20 py-5 dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
+      <h1 className="text-2xl sm:text-3xl font-bold text-emerald-700 dark:text-emerald-400 mb-8">
         {t("diet_types.title")}
       </h1>
       <div className="space-y-6">

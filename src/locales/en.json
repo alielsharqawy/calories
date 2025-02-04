@@ -1,9 +1,9 @@
 {
   "navbar": {
-    "home": "Home",
     "diets": "Diets Types",
     "calories_calculator": "Calories Calculator",
     "body_info": "InBody Info",
+    "health_library": "Healthy Recipes Library",
     "keto_diet": "Keto Diet",
     "juice_diet": "Juice Diet",
     "intermittent_fasting": "Intermittent Fasting Diet",
@@ -27,6 +27,10 @@
     "calories_calculator": {
       "title": "Calories Calculator",
       "description": "Calculate your daily caloric needs and macronutrient distribution."
+    },
+    "healthy_recipes": {
+      "title": "Healthy Recipes Library",
+      "description": "A wide variety of healthy recipes categorized by diet types, with detailed information about ingredients and nutritional values."
     },
     "inbody_info": {
       "title": "InBody Info",

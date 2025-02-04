@@ -8,7 +8,7 @@ module.exports = {
         cairo: ["Cairo", "sans-serif"],
       },
       colors: {
-        lightBg: "#FEFFA7",
+        lightBg: "#F0F0D7",
       },
     },
   },

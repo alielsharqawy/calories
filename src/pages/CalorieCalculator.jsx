@@ -74,7 +74,7 @@ const CalorieCalculator = () => {
 
   return (
     <div className="p-6 w-full mx-auto dark:bg-gray-900 text-gray-900 dark:text-gray-100 transition-all">
-      <h2 className="text-3xl font-bold mb-6 text-center text-emerald-700 dark:text-emerald-400">
+      <h2 className="text-3xl font-bold mb-6  text-emerald-700 dark:text-emerald-400">
         {t("calorie_calculator.title")}
       </h2>
 
